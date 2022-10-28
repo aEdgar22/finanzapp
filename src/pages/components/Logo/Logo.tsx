@@ -14,7 +14,7 @@ const Logo: React.FC<LogoInterface> = () => {
         pt="10"
         direction="row"
         align="center"
-        columnGap="8"
+        columnGap="4"
         justify="center"
       >
         <Image src={logo} alt="logo-app" w="30%" />
