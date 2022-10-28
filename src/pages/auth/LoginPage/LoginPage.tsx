@@ -35,7 +35,7 @@ const LoginPage: React.FC<LoginPageInterface> = () => {
             />
           </FormControl>
 
-          <Button colorScheme="teal" variant="solid">
+          <Button variant="primary">
             Ingresar
           </Button>
         </Form>

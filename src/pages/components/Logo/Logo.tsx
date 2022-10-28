@@ -18,7 +18,7 @@ const Logo: React.FC<LogoInterface> = () => {
         justify="center"
       >
         <Image src={logo} alt="logo-app" w="30%" />
-        <Heading as="h1" size="2xl" color="titleColor">
+        <Heading as="h1" size="2xl" color="secondary">
           FinanzApp
         </Heading>
       </Flex>
