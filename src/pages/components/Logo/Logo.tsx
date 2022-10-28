@@ -12,13 +12,14 @@ const Logo: React.FC<LogoInterface> = () => {
       <Flex
         p="4"
         pt="10"
-        direction="row"
+        direction={{base:"row", lg:'column'}}
         align="center"
         columnGap="4"
         justify="center"
+        rowGap={{md:'2rem'}}
       >
-        <Image src={logo} alt="logo-app" w="30%" />
-        <Heading as="h1" size="2xl" color="secondary">
+        <Image src={logo} alt="logo-app" w={{base: '30%', lg: '100%'}} />
+        <Heading as="h1" size={['xl', '2xl']} color="secondary">
           FinanzApp
         </Heading>
       </Flex>

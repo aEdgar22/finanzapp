@@ -1,5 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
-import { ButtonsStyles as Button} from "./components/ButtonsStyles";
+import { ButtonsStyles as Button } from "./components/ButtonsStyles";
 const theme = extendTheme({
   styles: {
     global: {
@@ -8,7 +8,9 @@ const theme = extendTheme({
       },
 
       a: {
-        textDecoration: "none",
+        textDecoration: "underline",
+        color: '0000',
+        fontWeight: "bold"
       },
     },
   },
@@ -16,11 +18,10 @@ const theme = extendTheme({
     primary: "#CDA434",
     secondary: "#468966",
     warning: "#EB1D36",
-    titleColor: "#00541A",
   },
   components: {
-    Button
-  }
+    Button,
+  },
 });
 
 export default theme;

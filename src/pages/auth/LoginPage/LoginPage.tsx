@@ -1,9 +1,18 @@
 import { Logo } from "@/pages/components/Logo";
-import { Box, Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Center,
+  FormControl,
+  FormLabel,
+  Input,
+  Text,
+} from "@chakra-ui/react";
 import React from "react";
 import { Form } from "../styledComponents";
 
 import { ButtonSocial } from "../components/ButtonSocial";
+import { Link } from "react-router-dom";
 
 export interface LoginPageInterface {}
 
@@ -12,7 +21,12 @@ const LoginPage: React.FC<LoginPageInterface> = () => {
     <>
       <Logo />
 
-      <Box h="100%" p="4" pb="8">
+      <Box
+        h={{ base: "100%", md: "fit-content" }}
+        p="4"
+        pb="8"
+        w={{ lg: "25%" }}
+      >
         <Form>
           <FormControl>
             <FormLabel htmlFor="email">Correo</FormLabel>
@@ -35,9 +49,16 @@ const LoginPage: React.FC<LoginPageInterface> = () => {
             />
           </FormControl>
 
-          <Button variant="primary">
-            Ingresar
-          </Button>
+          <Button variant="primary">Ingresar</Button>
+
+          <Center>
+            <Text>
+              Aún no tienes cuenta? {" "} {" "}
+              <Link id="linkSignUp" to="/auth/signup">
+                Registrate
+              </Link>
+            </Text>
+          </Center>
         </Form>
 
         <ButtonSocial />
