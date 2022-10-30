@@ -6,6 +6,8 @@ import {
   FormControl,
   FormLabel,
   Input,
+  InputGroup,
+  InputRightElement,
   Text,
 } from "@chakra-ui/react";
 import React from "react";
@@ -13,10 +15,19 @@ import { Form } from "../styledComponents";
 
 import { ButtonSocial } from "../components/ButtonSocial";
 import { Link } from "react-router-dom";
+import { useShowPassword } from "../hooks";
 
 export interface LoginPageInterface {}
 
 const LoginPage: React.FC<LoginPageInterface> = () => {
+  /*   const [show, setShow] = React.useState<boolean>(false);
+
+  const handleClick = ():void => {
+    setShow(!show);
+  };
+ */
+  const {show, handleClick} = useShowPassword(false);
+
   return (
     <>
       <Logo />
@@ -25,7 +36,10 @@ const LoginPage: React.FC<LoginPageInterface> = () => {
         h={{ base: "100%", md: "fit-content" }}
         p="4"
         pb="8"
-        w={{ lg: "25%" }}
+        w={{
+          base: "100%",
+          lg: "28rem",
+        }}
       >
         <Form>
           <FormControl>
@@ -39,21 +53,24 @@ const LoginPage: React.FC<LoginPageInterface> = () => {
             />
           </FormControl>
 
-          <FormControl>
-            <FormLabel htmlFor="password">Contraseña</FormLabel>
+          <InputGroup size="md">
             <Input
-              id="password"
-              type="password"
-              name="password"
-              placeholder="**********"
+              pr="4.5rem"
+              type={show ? "text" : "password"}
+              placeholder="Enter password"
             />
-          </FormControl>
+            <InputRightElement width="4.5rem">
+              <Button h="1.75rem" size="sm" onClick={handleClick}>
+                {show ? "Hide" : "Show"}
+              </Button>
+            </InputRightElement>
+          </InputGroup>
 
           <Button variant="primary">Ingresar</Button>
 
           <Center>
             <Text>
-              Aún no tienes cuenta? {" "} {" "}
+              Aún no tienes cuenta?{" "}
               <Link id="linkSignUp" to="/auth/signup">
                 Registrate
               </Link>
